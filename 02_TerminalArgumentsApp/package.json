@@ -1,0 +1,26 @@
+{
+  "name": "terminal-arguments-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-help": "node index.js --help",
+    "start-list": "node index.js list",
+    "start-add": "node index.js add --title=\"Things to buy\" --content=\"Just to test body content of a note\"",
+    "start-add2": "node index.js add --title=\"Things to buy v2\" --content=\"Just to test body content of a note\"",
+    "start-add3": "node index.js add --title=\"Things to buy v3\" --content=\"Just to test body content of a note\"",
+    "start-remove": "node index.js remove --title=\"Things to buy v2\"",
+    "start-read": "node index.js read --title=\"Things to buy v3\"",
+    "start-inspect": "node inspect index.js add --title=\"Things to buy\" --content=\"Just to test body content of a note\"",
+    "start-inspect-fix": "node --inspect-brk index.js add --title=\"Things to buy\" --content=\"Just to test body content of a note\"",
+    "start": "node index.js list",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.4.1",
+    "yargs": "^17.6.2"
+  }
+}
