@@ -33,3 +33,16 @@ console.log('stock is: ', stock);
 console.log('dicount is: ', dicount);
 console.log('rating is: ', rating);
 console.log('available is: ', available);
+
+
+// Object destructuring in function arguments
+console.log(`
+-------------// Object destructuring in function arguments
+`);
+const transaction = (type, {label, price}) => {
+    console.log('type is: ', type);
+    console.log('label is: ', label);
+    console.log('price is: ', price);
+};
+
+transaction('paper product', product)
