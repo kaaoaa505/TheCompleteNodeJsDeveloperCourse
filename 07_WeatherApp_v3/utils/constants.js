@@ -1,0 +1,1 @@
+export const baseUrl = `http://api.weatherstack.com/current?access_key=6e437138879d3336efe31c66a1987a80&query=`;
