@@ -1,0 +1,17 @@
+{
+  "name": "08_web_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "scripts": {
+    "start": "nodemon ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": ["npm", "node", "express", "server"],
+  "author": "Khaled Allam Ahmed",
+  "license": "ISC",
+  "description": "Test creating basic sever using node express package."
+}
