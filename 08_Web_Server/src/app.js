@@ -16,7 +16,11 @@ app.get('', (_req, res) => {
 });
 
 app.get('/about', (_req, res) => {
-    return res.send('About');
+    res.sendFile(path.join(public_path, 'about.html'));
+});
+
+app.get('/support', (_req, res) => {
+    res.sendFile(path.join(public_path, 'support.html'));
 });
 
 app.get('/weather', (_req, res) => { 
