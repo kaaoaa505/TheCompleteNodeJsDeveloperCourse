@@ -1,16 +1,25 @@
+import path from 'path';
 import express from 'express';
 
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const public_path = path.join(__dirname, '..', 'public');
+
 const app = express();
+app.use(express.static(public_path));
 
 app.get('', (_req, res) => {
-    return res.send('<b style="font-size: 24px;">Home</b>');
+    res.sendFile(path.join(public_path, 'index.html'));
 });
 
 app.get('/about', (_req, res) => {
     return res.send('About');
 });
 
-app.get('/weather', (_req, res) => {
+app.get('/weather', (_req, res) => { 
     return res.send('Weather');
 });
 

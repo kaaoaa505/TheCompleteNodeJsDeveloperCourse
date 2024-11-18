@@ -10,8 +10,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
-  "keywords": ["npm", "node", "express", "server"],
+  "keywords": [
+    "npm",
+    "node",
+    "express",
+    "server"
+  ],
   "author": "Khaled Allam Ahmed",
   "license": "ISC",
-  "description": "Test creating basic sever using node express package."
+  "description": "Test creating basic sever using node express package.",
+  "devDependencies": {
+    "@types/express": "^5.0.0"
+  }
 }
