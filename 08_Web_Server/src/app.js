@@ -18,6 +18,16 @@ app.get('/support', (_req, res) => {
     return res.send('support');
 });
 
+app.get('/json', (_req, res) => {
+    return res.send([{
+        name: 'Khaled',
+        age: 35
+    },{
+        name: 'Allam',
+        age: 75
+    }]);
+});
+
 app.listen(3000, ()=>{
     console.log('server is running http://localhost:3000');
 });
