@@ -9,26 +9,31 @@ const __dirname = path.dirname(__filename);
 const public_path = path.join(__dirname, '..', 'public');
 
 const app = express();
+
+app.set('view engine', 'hbs');
+
 app.use(express.static(public_path));
 
 app.get('', (_req, res) => {
-    res.sendFile(path.join(public_path, 'index.html'));
+    res.render('index', {
+        title: 'Home',
+        content: 'Welcome, Khaled Allam'
+    });
 });
 
 app.get('/about', (_req, res) => {
-    res.sendFile(path.join(public_path, 'about.html'));
+    res.render('about', {
+        title: 'About',
+        content: 'About page content...'
+    });
 });
 
 app.get('/support', (_req, res) => {
-    res.sendFile(path.join(public_path, 'support.html'));
+    return res.render('support');
 });
 
 app.get('/weather', (_req, res) => { 
     return res.send('Weather');
-});
-
-app.get('/support', (_req, res) => {
-    return res.send('support');
 });
 
 app.get('/json', (_req, res) => {
