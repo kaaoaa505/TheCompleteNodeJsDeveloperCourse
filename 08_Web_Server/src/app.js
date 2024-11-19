@@ -1,5 +1,6 @@
 import path from 'path';
 import express from 'express';
+import hbs from 'hbs';
 
 import { fileURLToPath } from 'url';
 
@@ -7,10 +8,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const public_path = path.join(__dirname, '..', 'public');
+const views_path = path.join(__dirname, '..', 'views/pages');
+const partials_path = path.join(__dirname, '..', 'views/_partials');
 
 const app = express();
 
 app.set('view engine', 'hbs');
+app.set('views', views_path);
+
+hbs.registerPartials(partials_path);
 
 app.use(express.static(public_path));
 
@@ -29,7 +35,10 @@ app.get('/about', (_req, res) => {
 });
 
 app.get('/support', (_req, res) => {
-    return res.render('support');
+    res.render('support', {
+        title: 'Support',
+        content: 'Support page content...'
+    });
 });
 
 app.get('/weather', (_req, res) => { 
