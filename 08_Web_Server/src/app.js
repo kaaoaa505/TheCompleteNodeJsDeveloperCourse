@@ -34,6 +34,13 @@ app.get('/about', (_req, res) => {
     });
 });
 
+app.get('/about/*', (_req, res) => {
+    res.render('404', {
+        title: 'About Sub',
+        content: 'About sub page not found'
+    });
+});
+
 app.get('/support', (_req, res) => {
     res.render('support', {
         title: 'Support',
@@ -53,6 +60,13 @@ app.get('/json', (_req, res) => {
         name: 'Allam',
         age: 75
     }]);
+});
+
+app.get('*', (_req, res) => {
+    res.render('404', {
+        title: 'Not Found',
+        content: 'Page Not Found!'
+    });
 });
 
 app.listen(3000, ()=>{
